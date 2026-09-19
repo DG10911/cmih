@@ -4,6 +4,8 @@
 
 India's Critical Mineral Technology Intelligence Platform — a CMiH 2026 (PS2: Smart Technology & Patent Tracker for Critical Minerals) prototype.
 
+**Live demo:** https://DG10911.github.io/cmih/ (auto-deployed from `main` via GitHub Pages).
+
 > **Demonstration environment.** All data shown is deterministic, synthetic demo data for prototype
 > evaluation. No live government or patent APIs are connected. Nothing here fabricates real patent
 > numbers, live counts, or source integrations — synthetic records are labelled as such throughout.
