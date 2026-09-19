@@ -1,3 +1,4 @@
+"use client";
 import * as React from "react";
 import { ShieldCheck, Database, CircleDot, AlertTriangle, FlaskConical, ArrowUpRight, ArrowRight, ArrowDownRight } from "lucide-react";
 import { cn } from "@/lib/utils";
