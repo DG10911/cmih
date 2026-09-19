@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * KhanijDrishti — Intelligence Dark theme tokens.
+ * Values are space-separated RGB channels so Tailwind's <alpha-value> works.
+ */
+:root {
+  --background: 11 13 15; /* #0B0D0F */
+  --surface: 20 23 26; /* #14171A */
+  --surface-2: 27 31 36; /* #1B1F24 */
+  --surface-3: 35 40 46; /* #23282E */
+  --border: 38 43 49; /* #262B31 */
+  --border-strong: 51 58 66; /* #333A42 */
+
+  --ink: 232 235 237; /* #E8EBED */
+  --ink-soft: 162 171 179; /* #A2ABB3 */
+  --ink-faint: 107 116 124; /* #6B747C */
+
+  --mineral: 206 139 78; /* #CE8B4E copper/amber */
+  --mineral-soft: 224 164 88; /* #E0A458 */
+  --data: 86 166 189; /* #56A6BD muted cyan */
+  --data-soft: 122 194 214; /* #7AC2D6 */
+
+  --success: 79 169 126; /* #4FA97E */
+  --warning: 217 164 65; /* #D9A441 */
+  --danger: 217 108 108; /* #D96C6C */
+  --info: 91 141 239; /* #5B8DEF */
+}
+
+* {
+  border-color: rgb(var(--border));
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background-color: rgb(var(--background));
+  color: rgb(var(--ink));
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Thin, institutional scrollbars */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--border-strong));
+  border-radius: 9999px;
+  border: 3px solid rgb(var(--background));
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--ink-faint));
+}
+
+/* Focus ring for accessibility (keyboard navigation) */
+:focus-visible {
+  outline: 2px solid rgb(var(--data));
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Subtle grid / dot texture used behind hero + command center */
+.bg-grid {
+  background-image: radial-gradient(rgb(var(--border-strong) / 0.5) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* Skeleton shimmer wrapper */
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background: rgb(var(--surface-2));
+}
+.skeleton::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgb(var(--surface-3) / 0.7),
+    transparent
+  );
+  animation: shimmer 1.6s infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  .skeleton::after {
+    animation: none;
+  }
+}
